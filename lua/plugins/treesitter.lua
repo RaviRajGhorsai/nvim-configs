@@ -5,7 +5,7 @@ return {
     event = "BufRead",
     config = function()
       require("nvim-treesitter").setup({
-        ensure_installed = { "lua", "javascript", "python", "go", },
+        auto_install =true, 
         highlight = { enable = true },
         indent = { enable = true },
       })

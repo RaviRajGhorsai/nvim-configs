@@ -16,6 +16,9 @@ vim.opt.rtp:prepend(lazypath)
 
 
 
+vim.opt.completeopt = { "menuone", "noselect", "popup" }
+
+
 require("vim-options")
 require("lazy").setup("plugins")
 
