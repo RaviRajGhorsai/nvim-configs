@@ -1,7 +1,7 @@
 local on_attach = function(client, bufnr)
---	vim.lsp.completion.enable(true, client.id, bufnr, {
---		autotrigger = true,
---	})
+	--	vim.lsp.completion.enable(true, client.id, bufnr, {
+	--		autotrigger = true,
+	--	})
 
 	local opts = { buffer = bufnr }
 
@@ -52,18 +52,29 @@ return {
 				capabilities = capabilities,
 			})
 
-			vim.lsp.config("lua_ls", {
+			vim.lsp.config("ruff", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
+			vim.lsp.config("lua_ls", {
+				on_attach = on_attach,
+				capabilities = capabilities,
+				init_options = {
+					settings = {
+						args = {},
+					},
+				},
+			})
+
 			vim.lsp.config("gopls", {
 				on_attach = on_attach,
-                capabilities = capabilities,
+				capabilities = capabilities,
 			})
 
 			-- Enable servers
 			vim.lsp.enable("pyright")
+			vim.lsp.enable("ruff")
 			vim.lsp.enable("lua_ls")
 			vim.lsp.enable("gopls")
 		end,
