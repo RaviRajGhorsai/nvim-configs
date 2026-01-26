@@ -49,5 +49,21 @@ return {
 		keymap("n", "<C-N>", function()
 			harpoon:list():next()
 		end, { desc = "Harpoon: Next file" })
+		
+		keymap("n", "<leader>h1d", function()
+			harpoon:list():remove_at(1)
+		end, { desc = "Harpoon: Remove index 1" })
+
+		keymap("n", "<leader>h2d", function()
+			harpoon:list():remove_at(2)
+		end, { desc = "Harpoon: Remove index 2" })
+
+		keymap("n", "<leader>h3d", function()
+			harpoon:list():remove_at(3)
+		end, { desc = "Harpoon: Remove index 3" })
+
+		keymap("n", "<leader>h4d", function()
+			harpoon:list():remove_at(4)
+		end, { desc = "Harpoon: Remove index 4" })
 	end,
 }
